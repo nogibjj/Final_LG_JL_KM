@@ -4,43 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flask App</title>
-
     <style>
         body {
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://www.frommers.com/system/media_items/attachments/000/865/495/s980/6.TheLastBookstore-crop.jpg?1587430790');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
         }
 
         h1 {
-            margin-top: 100px; 
+            text-align: center;
+            background-color: white;
+            border-radius: 10px;
+            color: #333;
+            margin-bottom: 60px;
+            padding: 10px;
         }
 
         form {
-            display: inline-block;
-            text-align: left;
-            margin-top: 40px; 
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            padding: 40px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
 
-        label, select, input, button {
-            margin-bottom: 20px; 
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        select, input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        p {
+            color: red;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <h1>Welcome to the Book Buddy</h1>
+    <h1>Welcome to Book Buddy!</h1>
 
-    {% if error_message %}
-        <p style="color: red;">{{ error_message }}</p>
-    {% endif %}
+    <!--{% if error_message %}
+        <p>{{ error_message }}</p>
+    {% endif %}-->
 
     <form action="{{ url_for('show_recommendations') }}" method="post">
-        <label for="genre">Choose a genre:</label>
+        <label for="genre">Choose a Genre</label>
         <select id="genre" name="genre">
             {% for genre in genres %}
                 <option value="{{ genre }}">{{ genre }}</option>
             {% endfor %}
         </select>
 
-        <label for="quantity">Enter quantity:</label>
+        <label for="quantity"> How many recommendations?</label>
         <input type="number" id="quantity" name="quantity" min="1" value="1" required>
 
         <button type="submit">Get Recommendations</button>

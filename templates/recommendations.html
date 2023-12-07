@@ -6,31 +6,74 @@
     <title>Book Recommendations</title>
 
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 100px;
+            background-image: url('https://lifehacker.com/imagery/articles/01HF2GX4PY5QHPFB9XKPBT2HTJ/hero-image.fill.size_1248x702.v1699836009.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100vh;
+            padding-left: 20px;
+            background-size: cover;
+            background-attachment: fixed;
+            margin-bottom: 100px;
+
+        }
+
+        h1 {
+            color: #007BFF;
+        }
+
         ul {
             list-style-type: none;
             padding: 0;
         }
 
         li {
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 10px;
-            margin-bottom: 10px;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
         }
 
         strong {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            color: #333;
         }
 
         img {
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
+            max-width: 100%;
+            height: auto;
         }
 
         a {
             display: block;
             text-decoration: none;
-            color: #007BFF; /* or any color you prefer */
+            font-weight: bold;
+            border-radius: 10px;
+            background-color: #007BFF;
+            width: 130px;
+            text-align: center;
+            color: #fff;
+            border: none;
+        }
+
+        button {
+            color: #fff;
+            background-color: #007BFF;
+            border-radius: 10px;
+            font-size: 1em;
+            cursor: pointer;
+            outline: none;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+        a:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -43,12 +86,14 @@
                 <br>
                 <img src="{{ book[3] }}" alt="{{ book[0] }} Cover" height="150">
                 <br>
-                <a href="{{ book[4] }}" target="_blank">Buy the Book </a>
+                <a href="{{ book[4] }}" target="_blank">Buy the Book</a>
             </li>
         {% endfor %}
     </ul>
 
     <button onclick="window.location.href='{{ url_for('home') }}'">Recommend Me Again</button>
+    <br>
+    <br>
+    <br>
 </body>
 </html>
-
