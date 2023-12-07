@@ -4,15 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Recommendations</title>
+
+    <style>
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+
+        strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        img {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        a {
+            display: block;
+            text-decoration: none;
+            color: #007BFF; /* or any color you prefer */
+        }
+    </style>
 </head>
 <body>
     <h1>Recommended Books</h1>
-   <ul>
+    <ul>
         {% for book in books %}
             <li>
                 <strong>{{ book[0] }}</strong> by {{ book[1] }}
                 <br>
                 <img src="{{ book[3] }}" alt="{{ book[0] }} Cover" height="150">
+                <br>
+                <a href="{{ book[4] }}" target="_blank">Buy the Book </a>
             </li>
         {% endfor %}
     </ul>

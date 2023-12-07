@@ -68,6 +68,10 @@ def recommend(quantity, genre, percentile=0.85):
     qualified = qualified.head(75)
     qualified = qualified.sample(frac=1).reset_index(drop=True)
     python_list = qualified[cols].head(quantity).values.tolist()
+    for book in python_list:
+        title_words = book[0].split(" ")
+        amazon_link = "https://www.amazon.com/s?k=" + "+".join(title_words)
+        book.append(amazon_link)
     
     return python_list
 
