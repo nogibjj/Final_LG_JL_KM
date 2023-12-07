@@ -1,16 +1,10 @@
-from flask import Flask, redirect, url_for, render_template, request
-import logging
-from logging.handlers import RotatingFileHandler
+from flask import Flask, render_template, request
+
+
 from recommend import recommend
 
 app = Flask(__name__)
 
-# Configure logging
-log_formatter = logging.Formatter("%(asctime)s [%(levelname)s] - %(message)s")
-log_handler = RotatingFileHandler("app.log", maxBytes=10240, backupCount=5)
-log_handler.setFormatter(log_formatter)
-app.logger.addHandler(log_handler)
-app.logger.setLevel(logging.INFO)
 
 genres = [
     "Art",
@@ -55,7 +49,6 @@ genres = [
 
 @app.route("/")
 def home():
-    app.logger.info("Home page accessed")
     return render_template("home.html", genres=genres)
 
 
@@ -78,11 +71,7 @@ def show_recommendations():
 
     # If there is an error, return to home page
     if error_message:
-        app.logger.error(f"Error: {error_message}")
         return render_template("home.html", genres=genres, error_message=error_message)
-
-    app.logger.info(f"Recommendations page accessed for genre: {selected_genre}")
-    app.logger.info(f"Number of recommendations requested: {selected_quantity}")
 
     # type recommended_books is a pandas dataframe
     recommended_books = recommend(selected_quantity, selected_genre)

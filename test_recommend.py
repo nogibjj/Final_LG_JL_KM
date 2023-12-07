@@ -12,6 +12,7 @@ class TestBookRecommendation(unittest.TestCase):
             "authors",
             "weighted_rating",
             "image_url",
+            "amazon_link",
         ]
 
     def test_recommend_output_format(self):
