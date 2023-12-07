@@ -3,3 +3,7 @@ Werkzeug==2.2.2
 gunicorn
 pandas
 numpy
+black==22.3.0
+pytest==7.4.0
+pylint==2.15.3
+pytest-cov==4.0.0
