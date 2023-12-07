@@ -1,3 +1,11 @@
+![install](https://github.com/nogibjj/Final_LG_JL_KM/actions/workflows/install.yml/badge.svg)](https://github.com/nogibjj/Final_LG_JL_KM/actions/workflows/install.yml) 
+
+[![format](https://github.com/nogibjj/Final_LG_JL_KM/actions/workflows/format.yml/badge.svg)](https://github.com/nogibjj/Final_LG_JL_KM/actions/workflows/format.yml)
+
+[![lint](https://github.com/nogibjj/Final_LG_JL_KM/actions/workflows/lint.yml/badge.svg)](https://github.com/nogibjj/Final_LG_JL_KM/actions/workflows/lint.yml) 
+
+[![test](https://github.com/nogibjj/Final_LG_JL_KM/actions/workflows/test.yml/badge.svg)](https://github.com/nogibjj/Final_LG_JL_KM/actions/workflows/test.yml)
+
 # Book Buddy: 
 Data Engineering Systems Final Project by Jiechen Li, Haliunaa Munkhuu, and Lilly Grella
 
