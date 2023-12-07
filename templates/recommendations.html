@@ -9,7 +9,11 @@
     <h1>Recommended Books</h1>
     <ul>
         {% for book in books %}
-            <li>{{ book.title }} by {{ book.authors }}</li>
+            <li>
+                <strong>{{ book[0] }}</strong> by {{ book[1] }}
+                <br>
+                <img src="{{ book[3] }}" alt="{{ book[0] }} Cover" height="150">
+            </li>
         {% endfor %}
     </ul>
 </body>

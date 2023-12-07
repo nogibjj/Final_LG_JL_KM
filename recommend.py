@@ -1,8 +1,21 @@
 import pandas as pd
 import numpy as np
-
 import datetime
 import warnings
+import random
+
+class Book:
+    def __init__(self, title, author):
+        self.title = title
+        self.author = author
+
+
+class Books:
+    def __init__(self, dataframe):
+        self.books = [Book(row['Title'], row['Author']) for _, row in dataframe.iterrows()]
+        
+
+
 warnings.filterwarnings('ignore')
 
 
@@ -36,10 +49,11 @@ genres[:4]
 available_genres = tags.loc[tags.tag_name.str.lower().isin(genres)]
 available_genres_books = book_tags[book_tags.tag_id.isin(available_genres.tag_id)]
 available_genres_books['genre'] = available_genres.tag_name.loc[available_genres_books.tag_id].values
-cols = ['title','authors','original_publication_year','average_rating','ratings_count','work_text_reviews_count','weighted_rating','image_url']
+cols = ['title','authors','weighted_rating','image_url']
 
+import random
 
-def recommend(genre, percentile=0.85):
+def recommend(quantity, genre, percentile=0.85):
     df = available_genres_books[available_genres_books['genre'] == genre.lower()]
     qualified = books.set_index('book_id').loc[df.goodreads_book_id]
 
@@ -48,33 +62,11 @@ def recommend(genre, percentile=0.85):
     R = qualified['average_rating']
     C = qualified['average_rating'].mean()
     qualified['weighted_rating'] = (R*v + C*m) / (v + m)
-
     qualified.sort_values('weighted_rating', ascending=False, inplace=True)
-    return qualified
 
+    # Randomly select books from the top 75
+    qualified = qualified.head(75)
+    qualified = qualified.sample(frac=1).reset_index(drop=True)
+    python_list = qualified[cols].head(quantity).values.tolist()
+    return python_list
 
-import random
-
-# Generate a random number between 1 and 10
-num = random.randint(0, 75)
-
-genre = 'Cookbooks' #INPUT BY USER
-
-listBooks = recommend(genre)[cols]
-
-recommendedBook = listBooks.iloc[num]
-print(recommendedBook["title"])
-print(recommendedBook["authors"])
-print(recommendedBook["original_publication_year"])
-#print(recommendedBook["title"])
-
-title = recommendedBook["title"].split(" ")
-
-str1 = "https://www.amazon.com/s?k="
-for word in title:
-  if word != title[-1]:
-    str1 = str1 + word + "+"
-  else:
-    str1 += word
-
-print(str1)

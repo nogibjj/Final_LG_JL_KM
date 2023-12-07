@@ -6,16 +6,26 @@
     <title>Flask App</title>
 </head>
 <body>
-    <h1>Welcome to the Book Buddy!</h1>
-    
-    <form action="{{ url_for('show_article') }}" method="post">
-        <label for="genre">Select a Genre:</label>
-        <select name="genre" id="genre">
+    <h1>Welcome to the Book Buddy</h1>
+
+    {% if error_message %}
+        <p style="color: red;">{{ error_message }}</p>
+    {% endif %}
+
+    <form action="{{ url_for('show_recommendations') }}" method="post">
+        <label for="genre">Choose a genre:</label>
+        <select id="genre" name="genre">
             {% for genre in genres %}
                 <option value="{{ genre }}">{{ genre }}</option>
             {% endfor %}
         </select>
-        <button type="submit">Give Me Recommendations!</button>
+
+        <label for="quantity">Enter quantity:</label>
+        <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+
+        <button type="submit">Get Recommendations</button>
     </form>
 </body>
 </html>
+
+
