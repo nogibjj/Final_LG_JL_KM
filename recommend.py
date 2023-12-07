@@ -68,5 +68,6 @@ def recommend(quantity, genre, percentile=0.85):
     qualified = qualified.head(75)
     qualified = qualified.sample(frac=1).reset_index(drop=True)
     python_list = qualified[cols].head(quantity).values.tolist()
+    
     return python_list
 
