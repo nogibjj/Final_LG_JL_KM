@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Recommended Books</h1>
-    <ul>
+   <ul>
         {% for book in books %}
             <li>
                 <strong>{{ book[0] }}</strong> by {{ book[1] }}
@@ -16,5 +16,8 @@
             </li>
         {% endfor %}
     </ul>
+
+    <button onclick="window.location.href='{{ url_for('home') }}'">Recommend Me Again</button>
 </body>
 </html>
+
