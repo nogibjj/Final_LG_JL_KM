@@ -17,18 +17,25 @@ recommendation.py performs the recommendation process for the app.
 * Go to the following URL: [Book Buddy](https://bookbuddy3.azurewebsites.net/)
 * Select the genre you are interested in
 * Select how many books you would like to be recommended (Note: a value less than or equal to 0 will not let you continue)
-* Click `Get Recommendations`. You will be redirected to a page with the list of books recommended in the genre selected.
-* At this point, you can click on `Buy the Book`. This will rerouted you to an amazon page to purchase the book.
-* Alternatively, if you want to be recommended a new set of book or switch genres, click `Recommend Me Again`.
 
 ![web1](imgs/web1.png)
 
+* Click `Get Recommendations`. You will be redirected to a page with the list of books recommended in the genre selected.
+
 ![web2](imgs/web2.png)
+
+* At this point, you can click on `Buy the Book`. This will rerouted you to an Amazon page to purchase the book.
+
+![web3](imgs/web3.png)
+
+* Alternatively, if you want to be recommended a new set of book or switch genres, click `Recommend Me Again`.
+
+![web4](imgs/web4.png)
 
 ## Building the App
 
 * Step 1: Write recommendation python code
-* Step 2: Develop Flask code, developing URLs for different pages for our client,
+* Step 2: Develop Flask code, developing URLs for different pages for our client
 * Step 3: Develop HTML files for website rendering
 * Step 4: Create Docker image for Azure to run the app
 * Step 5: Deploy to Azure by pulling docker image from DockerHub
@@ -40,7 +47,7 @@ recommendation.py performs the recommendation process for the app.
 ## Data Processing
 
 * There are three csv files that we stored and used as our database: books.csv, ratings.csv, tags.csv, and book_tags.csv.
-* The data comes from goodreads, and the datasets are pulled from Kaggle.
+* The data comes from [Goodreads](https://www.goodreads.com/), and the datasets are pulled from [Kaggle](https://www.kaggle.com/).
 * The data is diagrammed as the following:
 
 ## Add Image
@@ -94,5 +101,5 @@ High RPS:
 
 ## Using AI Programming
 
-* We used github CoPilot to aid in flask development
+* We used GitHub CoPilot to aid in Flask development
 * We used codewhisperer and ChatGPT to specifically help develop our frontend HTML code and the python recommendation code
