@@ -12,6 +12,8 @@ recommendation.py performs the recommendation process for the app.
 
 ## Demo Link
 
+Please click this [link](https://bookbuddy3.azurewebsites.net/) to watch our project walk-through video.
+
 ## Using Book Buddy
 
 * Go to the following URL: [Book Buddy](https://bookbuddy3.azurewebsites.net/)
@@ -46,20 +48,14 @@ recommendation.py performs the recommendation process for the app.
 
 ## Data Processing
 
-<<<<<<< HEAD
-* There are three csv files that we stored and used as our database: books.csv, ratings.csv, tags.csv, and book_tags.csv.
+* There are three csv files that we stored and used as our database: ``books.csv``, ``ratings.csv``, ``tags.csv``, and ``book_tags.csv``.
 * The data comes from [Goodreads](https://www.goodreads.com/), and the datasets are pulled from [Kaggle](https://www.kaggle.com/).
 * The data is diagrammed as the following:
-=======
-* There are three csv files that we stored and used as our database: books_2.csv, ratings.csv, tags.csv, and book_tags.csv.
-* The data comes from goodreads, and the datasets are pulled from Kaggle.
-* The data is diagrammed as the following (Note: we dropped a few irrelevant variables from books_2.csv for improved cleanliness of the diagram):
->>>>>>> 7502ecc74fe89319f55e3c6c1993dccbcb3ae82d
 
 ![add_image](imgs/add_image.png)
 
-* After extracting the data and creating pandas dataframes, we performed transformations to set up the data for our analysis.
-* First, we needed to connect genres to books. We use a simplistic approach by scanning user tags for genre names. On goodreads, when a user rates a book, they can provide tags. For example, a user that rated "Odysseus" typically chooses the "Classics" Tag. This allowed us to create a `genre` category.
+* After extracting the data and creating Pandas dataframes, we performed transformations to set up the data for our analysis.
+* First, we needed to connect genres to books. We use a simplistic approach by scanning user tags for genre names. On Goodreads, when a user rates a book, they can provide tags. For example, a user that rated "Odysseus" typically chooses the "Classics" Tag. This allowed us to create a `genre` category.
 
 ## Data Analysis
 
@@ -71,9 +67,9 @@ recommendation.py performs the recommendation process for the app.
 * Recommendation Python Code: Pandas
 * App Creation: Flask, HTML, Docker
 * Build Tools:
-  * Linting: pylint
+  * Linting: Pylint
   * Testing: Pytest
-  * Formatting: black
+  * Formatting: Black
   * Deployment: Azure
 
 ## Logging
