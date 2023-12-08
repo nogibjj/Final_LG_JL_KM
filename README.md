@@ -39,16 +39,14 @@ recommendation.py performs the recommendation process for the app.
 
 ## Data Processing
 
-* There are three csv files that we stored and used as our database: books.csv, ratings.csv, tags.csv, and book_tags.csv.
+* There are three csv files that we stored and used as our database: books_2.csv, ratings.csv, tags.csv, and book_tags.csv.
 * The data comes from goodreads, and the datasets are pulled from Kaggle.
-* The data is diagrammed as the following:
+* The data is diagrammed as the following (Note: we dropped a few irrelevant variables from books_2.csv for improved cleanliness of the diagram):
 
-## Add Image
+![add_image](imgs/add_image.png)
 
 * After extracting the data and creating pandas dataframes, we performed transformations to set up the data for our analysis.
 * First, we needed to connect genres to books. We use a simplistic approach by scanning user tags for genre names. On goodreads, when a user rates a book, they can provide tags. For example, a user that rated "Odysseus" typically chooses the "Classics" Tag. This allowed us to create a `genre` category.
-
-![add_image](imgs/add_image.png)
 
 ## Data Analysis
 
