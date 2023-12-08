@@ -48,6 +48,8 @@ recommendation.py performs the recommendation process for the app.
 * After extracting the data and creating pandas dataframes, we performed transformations to set up the data for our analysis.
 * First, we needed to connect genres to books. We use a simplistic approach by scanning user tags for genre names. On goodreads, when a user rates a book, they can provide tags. For example, a user that rated "Odysseus" typically chooses the "Classics" Tag. This allowed us to create a `genre` category.
 
+![add_image](imgs/add_image.png)
+
 ## Data Analysis
 
 * Next, we wanted to create a weighted rating system, relying on previous literature and focusing on IDBM's weighting equation.
