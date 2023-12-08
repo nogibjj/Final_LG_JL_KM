@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request
 
-
-from recommend import recommend
+from mylib.recommend import recommend
 
 app = Flask(__name__)
 

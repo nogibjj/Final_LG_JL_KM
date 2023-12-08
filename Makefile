@@ -7,10 +7,10 @@ lint:
 
 
 format:	
-	black main.py 
+	black *.py 
 
 test:
-	python3 -m pytest -vv test_*.py
+	python3 -m pytest -vv test/test_*.py
 	
 		
 all: install lint format test 
