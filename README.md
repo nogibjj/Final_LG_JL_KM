@@ -12,7 +12,7 @@ recommendation.py performs the recommendation process for the app.
 
 ## Demo Link
 
-Please click this [link](https://bookbuddy3.azurewebsites.net/) to watch our project walk-through video.
+Please click this [link](https://youtu.be/SxbY_kcvkrA) to watch our project walk-through video.
 
 ## Using Book Buddy
 
