@@ -2,7 +2,9 @@
 
 # Book Buddy
 
-Data Engineering Systems Final Project by Jiechen Li, Haliunaa Munkhuu, and Lilly Grella
+Are you a book lover with a taste for surprises? Discover the joy of unexpected reads with Book Buddy's Mystery Box! Tailored just for you, our unique book recommendation system brings the thrill of mystery to your reading list. Dive into a world of hidden gems and delightful discoveries – your next favorite book awaits!
+
+*Data Engineering Systems Final Project by Jiechen Li, Haliunaa Munkhuu, and Lilly Grella*
 
 ## Project Goals
 
