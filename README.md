@@ -84,7 +84,7 @@ Please click this [link](https://youtu.be/SxbY_kcvkrA) to watch our project walk
 * We first defined the userbehavior in locustfile.py, after running `locust` in the terminal, we are prompted to visit the locust user interface at <http://localhost:8089>
 * To perform load testing, we added various values to the number of users and spawn rate. We found our app was successful during load testing as shown by the below outcomes:
 
-Performance Analysis: During testing we were able to reach 1000+ responses per seconds which is relatively high number considering the compute power of the machines. As we can see from the results, our failure rate is very low which speaks to the robustness of our server. We averaged about 50-100 ms for the minimum response rate and 10K-75Kms during the peak swarm.  
+**Performance Analysis:** During testing we were able to reach 1000+ responses per seconds which is relatively high number considering the compute power of the machines. As we can see from the results, our failure rate is very low which speaks to the robustness of our server. We averaged about 50-100 ms for the minimum response rate and 10K-75Kms during the peak swarm.  
 
 Peak Concurrency: 100, Spawn Rate: 100
 ![L_100_100](imgs/L_100_100.png)
